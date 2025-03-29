@@ -42,5 +42,9 @@
 
 ---
 
-## 💡 **Getting Started**
+## 💡 **Why this setup?**
+- **Simplifies architecture:** No need for a dedicated backend server. 
+- **Scalability:** Convex functions scale automatically. 
+- **Real-time collaboration:** iveblocks handles presence and conflict resolution.  
+- **Authentication:** Clerk seamlessly manages user authentication.
 
