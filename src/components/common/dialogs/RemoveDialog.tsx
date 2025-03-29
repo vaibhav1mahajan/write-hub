@@ -10,9 +10,9 @@ import {
     AlertDialogTitle,
     AlertDialogTrigger,
   } from "@/components/ui/alert-dialog"
-import { Id } from "../../convex/_generated/dataModel"
+import { Id } from "../../../../convex/_generated/dataModel"
 import { ReactNode, useState } from "react";
-import { api } from "../../convex/_generated/api";
+import { api } from "../../../../convex/_generated/api";
 import { useMutation } from "convex/react";
 import {toast} from 'sonner'
 import { useRouter } from "next/navigation";

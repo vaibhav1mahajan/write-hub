@@ -1,35 +1,22 @@
-import { useEditorStore } from "@/store/use-editor-store"
+import { useEditorStore } from "@/store/use-editor-store";
 import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuLabel,
-    DropdownMenuSeparator,
-    DropdownMenuTrigger,
-  } from "@/components/ui/dropdown-menu"
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { cn } from "@/lib/utils";
-import {
-  AlignCenterIcon,
-  AlignJustifyIcon,
-  AlignLeftIcon,
-  AlignRightIcon,
-  ListCollapseIcon,
-} from "lucide-react";
-import TextAlign from "@tiptap/extension-text-align";
+import { ListCollapseIcon } from "lucide-react";
 
 export const LineHeight = () => {
-    
-    const {editor} = useEditorStore();
+  const { editor } = useEditorStore();
 
-    const lineHeights = [
-      { value: "100", label: "1" },
-      { value: "150", label: "1.5" },
-      { value: "200", label: "2" },
-      { value: "250", label: "2.5" },
-      { value: "300", label: "3" },
-    ];
-
-  
+  const lineHeights = [
+    { value: "100", label: "1" },
+    { value: "150", label: "1.5" },
+    { value: "200", label: "2" },
+    { value: "250", label: "2.5" },
+    { value: "300", label: "3" },
+  ];
 
   return (
     <DropdownMenu>

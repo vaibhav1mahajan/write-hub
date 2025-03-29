@@ -6,16 +6,15 @@ import {
 } from "@liveblocks/react-tiptap";
 import { Editor } from "@tiptap/react";
 
-export function Threads ({ editor }: { editor: Editor | null }){
+export function Threads({ editor }: { editor: Editor | null }) {
   return (
-
     <ClientSideSuspense fallback={null}>
-    <ThreadList editor={editor}/>
+      <ThreadList editor={editor} />
     </ClientSideSuspense>
-  )
+  );
 }
 
- function ThreadList({ editor }: { editor: Editor | null }) {
+function ThreadList({ editor }: { editor: Editor | null }) {
   const { threads } = useThreads({ query: { resolved: false } });
 
   return (

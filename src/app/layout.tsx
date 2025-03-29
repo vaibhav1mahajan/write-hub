@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { Toaster } from "@/components/ui/sonner"
+import { Toaster } from "@/components/ui/sonner";
 import "./globals.css";
 
-import {NuqsAdapter} from 'nuqs/adapters/next/app'
+import { NuqsAdapter } from "nuqs/adapters/next/app";
 import { ConvexClientProvider } from "@/components/providers/ConvexProvider";
 
 import "@liveblocks/react-ui/styles.css";
@@ -31,7 +31,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning >
+    <html lang="en" suppressHydrationWarning>
       <head>
         {/* Google Fonts link */}
         <link
@@ -43,13 +43,14 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body suppressHydrationWarning
-        className={`${geistSans.variable} ${geistMono.variable} antialiased `} 
+      <body
+        suppressHydrationWarning
+        className={`${geistSans.variable} ${geistMono.variable} antialiased `}
       >
         <NuqsAdapter>
-          <ConvexClientProvider >
-        <Toaster />
-        {children}
+          <ConvexClientProvider>
+            <Toaster />
+            {children}
           </ConvexClientProvider>
         </NuqsAdapter>
       </body>

@@ -1,12 +1,17 @@
+"use client";
 
-const DocumentsPage =  () => {
-    
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 
-  return (
-    <div>
-        Documents page 
-    </div>
-  )
-}
+const DocumentsPage = () => {
+  const router = useRouter();
 
-export default DocumentsPage
+  useEffect(() => {
+    router.push("/");  // Automatically redirect to "/"
+  }, [router]);
+
+  return null;  // No need to render anything since it redirects immediately
+};
+
+export default DocumentsPage;
+

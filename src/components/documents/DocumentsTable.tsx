@@ -1,20 +1,19 @@
-import { PaginationStatus } from "convex/react";
-import { Doc } from "../../convex/_generated/dataModel";
-import { Building2Icon, CircleUserIcon, LoaderIcon, MoreVertical } from "lucide-react";
+import { Doc } from "../../../convex/_generated/dataModel";
+import { Building2Icon, CircleUserIcon, LoaderIcon } from "lucide-react";
 import {SiGoogledocs} from 'react-icons/si'
 import {format} from 'date-fns'
 import {
     Table,
     TableBody,
-    TableCaption,
     TableCell,
     TableHead,
     TableHeader,
     TableRow,
   } from "@/components/ui/table"
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 import DocumentMenu from "./DocumentMenu";
 import { useRouter } from "next/navigation";
+import { PaginationStatus } from "convex/react";
   
 
 interface DocumentsTableProps{

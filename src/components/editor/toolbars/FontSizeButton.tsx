@@ -24,7 +24,7 @@ export const FontSizeButton = () => {
     }
   };
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    e.preventDefault()
+    e.preventDefault();
     setInputValue(e.target.value);
   };
 
@@ -55,17 +55,18 @@ export const FontSizeButton = () => {
     <div className="flex items-center gap-x-0.5">
       <button
         onClick={decrement}
-        className="h-7 w-7 shrink-0 flex  items-center justify-center rounded-sm hover:bg-neutral-200/80 "
+        className="flex items-center justify-center rounded-sm h-7 w-7 shrink-0 hover:bg-neutral-200/80 "
       >
         <MinusIcon className="size-4" />
       </button>
       {isEditing ? (
-        <input type="text"
-                value={inputValue}
-                onChange={handleInputChange}
-                onBlur={handleInputBlur}
-                onKeyDown={handleKeyDown}
-                className="h-7 w-10 text-sm text-center border border-neutral-400 rounded-sm bg-transparent focus:outline-none focus:ring-0"
+        <input
+          type="text"
+          value={inputValue}
+          onChange={handleInputChange}
+          onBlur={handleInputBlur}
+          onKeyDown={handleKeyDown}
+          className="w-10 text-sm text-center bg-transparent border rounded-sm h-7 border-neutral-400 focus:outline-none focus:ring-0"
         />
       ) : (
         <button
@@ -73,12 +74,14 @@ export const FontSizeButton = () => {
             setIsEditing(true);
             setFontSize(currentFontSize);
           }}
-          className="h-7 w-10 text-sm text-center border border-neutral-400 rounded-sm bg-transparent cursor-text"
-        >{fontSize}</button>
+          className="w-10 text-sm text-center bg-transparent border rounded-sm h-7 border-neutral-400 cursor-text"
+        >
+          {fontSize}
+        </button>
       )}
       <button
         onClick={increment}
-        className="h-7 w-7 shrink-0 flex  items-center justify-center rounded-sm hover:bg-neutral-200/80 "
+        className="flex items-center justify-center rounded-sm h-7 w-7 shrink-0 hover:bg-neutral-200/80 "
       >
         <PlusIcon className="size-4" />
       </button>

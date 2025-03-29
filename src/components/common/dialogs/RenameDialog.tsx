@@ -1,7 +1,7 @@
 'use client'
-import { Id } from "../../convex/_generated/dataModel"
+import { Id } from "../../../../convex/_generated/dataModel"
 import { ReactNode, useState } from "react";
-import { api } from "../../convex/_generated/api";
+import { api } from "../../../../convex/_generated/api";
 import { useMutation } from "convex/react";
 
 import {
@@ -13,8 +13,8 @@ import {
     DialogTitle,
     DialogTrigger,
   } from "@/components/ui/dialog"
-import { Input } from "./ui/input";
-import { Button } from "./ui/button";
+import { Input } from "../../ui/input";
+import { Button } from "../../ui/button";
 import { toast } from "sonner";
   
   

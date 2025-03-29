@@ -1,10 +1,7 @@
-import Loader from "@/components/Loader"
-
+import Loader from "@/components/common/Loader";
 
 const loading = () => {
-  return (
-    <Loader label="Document loading ..." />
-  )
-}
+  return <Loader label="Document loading ..." />;
+};
 
-export default loading
+export default loading;

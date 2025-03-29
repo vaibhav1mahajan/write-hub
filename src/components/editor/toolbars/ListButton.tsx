@@ -1,42 +1,29 @@
-import { useEditorStore } from "@/store/use-editor-store"
+import { useEditorStore } from "@/store/use-editor-store";
 import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuLabel,
-    DropdownMenuSeparator,
-    DropdownMenuTrigger,
-  } from "@/components/ui/dropdown-menu"
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { cn } from "@/lib/utils";
-import {
-  AlignCenterIcon,
-  AlignJustifyIcon,
-  AlignLeftIcon,
-  AlignRightIcon,
-  ListIcon,
-  ListOrderedIcon,
-} from "lucide-react";
+import { ListIcon, ListOrderedIcon } from "lucide-react";
 
 export const ListButton = () => {
-    
-    const {editor} = useEditorStore();
+  const { editor } = useEditorStore();
 
-    const lists = [
-      {
-        label: "Bullet List",
-        icon: ListIcon,
-        isActive: editor?.isActive("bulletList"),
-        onClick: () => editor?.chain().focus().toggleBulletList().run(),
-      },
-      {
-        label: "Ordered List",
-        icon: ListOrderedIcon,
-        isActive: editor?.isActive("orderedList"),
-        onClick: () => editor?.chain().focus().toggleOrderedList().run(),
-      },
-    ];
-
-  
+  const lists = [
+    {
+      label: "Bullet List",
+      icon: ListIcon,
+      isActive: editor?.isActive("bulletList"),
+      onClick: () => editor?.chain().focus().toggleBulletList().run(),
+    },
+    {
+      label: "Ordered List",
+      icon: ListOrderedIcon,
+      isActive: editor?.isActive("orderedList"),
+      onClick: () => editor?.chain().focus().toggleOrderedList().run(),
+    },
+  ];
 
   return (
     <DropdownMenu>
@@ -53,7 +40,7 @@ export const ListButton = () => {
         {lists.map(({ label, onClick, isActive, icon: Icon }) => (
           <button
             key={label}
-            onClick= {onClick}
+            onClick={onClick}
             className={cn(
               "flex items-center gap-x-2 px-2 py-1 rounded-sm hover:bg-neutral-200/80",
               isActive && "bg-neutral-200/80"

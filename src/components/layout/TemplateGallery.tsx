@@ -1,30 +1,30 @@
-'use client'
+"use client";
 import {
-    Carousel,
-    CarouselContent,
-    CarouselItem,
-    CarouselNext,
-    CarouselPrevious,
-  } from "@/components/ui/carousel"
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
 import { useMutation } from "convex/react";
 import { useRouter } from "next/navigation";
-import { api } from "../../../../convex/_generated/api";
+import { api } from "../../../convex/_generated/api";
 import { useState } from "react";
 import { toast } from "sonner";
 
-  const templates = [
-    {
-      id: "blank",
-      label: "Blank Document",
-      imageUrl: "/blank-document.svg",
-      initialContent:""
-    },
-    {
-      id: "software-proposal",
-      label: "Software Development Proposal",
-      imageUrl: "/software-proposal.svg",
-      initialContent:`
+const templates = [
+  {
+    id: "blank",
+    label: "Blank Document",
+    imageUrl: "/blank-document.svg",
+    initialContent: "",
+  },
+  {
+    id: "software-proposal",
+    label: "Software Development Proposal",
+    imageUrl: "/software-proposal.svg",
+    initialContent: `
         <h1>Software Development Proposal</h1>
     <h2>1. Project Overview</h2>
     <p>Brief description of the project, goals, and objectives.</p>
@@ -47,13 +47,13 @@ import { toast } from "sonner";
 
     <h2>6. Contact Information</h2>
     <p>Company name, email, and phone number.</p>
-      `
-    },
-    {
-      id: "project-proposal",
-      label: "Project Proposal",
-      imageUrl: "/project-proposal.svg",
-      initialContent:`
+      `,
+  },
+  {
+    id: "project-proposal",
+    label: "Project Proposal",
+    imageUrl: "/project-proposal.svg",
+    initialContent: `
         <h1>Project Proposal</h1>
     <h2>1. Title</h2>
     <p>[Project Title]</p>
@@ -75,13 +75,13 @@ import { toast } from "sonner";
 
     <h2>7. Contact Information</h2>
     <p>Details of the project proposer.</p>
-      `
-    },
-    {
-      id: "business-letter",
-      label: "Business Letter",
-      imageUrl: "/business-letter.svg",
-      initialContent:`
+      `,
+  },
+  {
+    id: "business-letter",
+    label: "Business Letter",
+    imageUrl: "/business-letter.svg",
+    initialContent: `
         <p>[Your Name]</p>
     <p>[Your Address]</p>
     <p>[City, State, ZIP Code]</p>
@@ -106,13 +106,13 @@ import { toast } from "sonner";
 
     <p>Sincerely,</p>
     <p>[Your Name]</p>
-      `
-    },
-    {
-        id: "resume",
-        label: "Resume",
-        imageUrl: "/resume.svg",
-        initialContent:`
+      `,
+  },
+  {
+    id: "resume",
+    label: "Resume",
+    imageUrl: "/resume.svg",
+    initialContent: `
            <h1>[Your Name]</h1>
     <p>[Email] | [Phone] | [LinkedIn/GitHub]</p>
 
@@ -138,13 +138,13 @@ import { toast } from "sonner";
         <li>Skill 2</li>
         <li>Skill 3</li>
     </ul>
-        `
-      },
-      {
-        id: "cover-letter",
-        label: "Cover letter",
-        imageUrl: "/cover-letter.svg",
-        initialContent:`
+        `,
+  },
+  {
+    id: "cover-letter",
+    label: "Cover letter",
+    imageUrl: "/cover-letter.svg",
+    initialContent: `
            <p>[Your Name]</p>
     <p>[Your Address]</p>
     <p>[City, State, ZIP Code]</p>
@@ -170,13 +170,13 @@ import { toast } from "sonner";
     
     <p>Sincerely,</p>
     <p>[Your Name]</p>
-        `
-      }, 
-      {
-        id: "letter",
-        label: "Letter",
-        imageUrl: "/letter.svg",
-        initialContent:`
+        `,
+  },
+  {
+    id: "letter",
+    label: "Letter",
+    imageUrl: "/letter.svg",
+    initialContent: `
            <p>[Your Name]</p>
     <p>[Your Address]</p>
     <p>[City, State, ZIP Code]</p>
@@ -199,34 +199,36 @@ import { toast } from "sonner";
 
     <p>Thank you,</p>
     <p>[Your Name]</p>
-        `
-      },   
-  ];
-  
+        `,
+  },
+];
+
 const TemplateGallery = () => {
-
   const router = useRouter();
-  const create = useMutation(api.documents.create)
+  const create = useMutation(api.documents.create);
 
-    const [isCreating , setIsCreating] = useState(false);
+  const [isCreating, setIsCreating] = useState(false);
 
-    const onTemplateClick = (title:string , initialContent:string) =>{
-      setIsCreating(true);
-      create({title,initialContent}).catch(()=>toast.error('Something went wrong')).then((documentId)=>{
-        toast.success('Document created')
-        router.push(`/documents/${documentId}`)
-       }).finally(()=>{
+  const onTemplateClick = (title: string, initialContent: string) => {
+    setIsCreating(true);
+    create({ title, initialContent })
+      .catch(() => toast.error("Something went wrong"))
+      .then((documentId) => {
+        toast.success("Document created");
+        router.push(`/documents/${documentId}`);
+      })
+      .finally(() => {
         setIsCreating(false);
-       })
-    }
+      });
+  };
 
   return (
     <div className="bg-[#F1F3F4]">
-      <div className="max-w-screen-xl mx-auto py-6 px-16 flex flex-col gap-y-4">
+      <div className="flex flex-col max-w-screen-xl px-16 py-6 mx-auto gap-y-4">
         <h3 className="font-medium">Start a new document</h3>
         <Carousel>
-          <CarouselContent className=" -ml-4">
-            {templates.map(({ label, imageUrl, id ,initialContent}) => (
+          <CarouselContent className="-ml-4 ">
+            {templates.map(({ label, imageUrl, id, initialContent }) => (
               <CarouselItem
                 key={id}
                 className="basis-1/2 sm:basis-1/3 md:basis-1/4 lg:basis-1/5 xl:basis-1/6 2xl:basis-[14.285714%] pl-4"
@@ -239,8 +241,10 @@ const TemplateGallery = () => {
                 >
                   <button
                     disabled={isCreating}
-                    onClick={() => {onTemplateClick(label,initialContent)}}
-                    className="size-full border hover:border-blue-500 rounded-sm hover:bg-blue-50 bg-white  gap-y-4 flex flex-col items-center justify-center transition "
+                    onClick={() => {
+                      onTemplateClick(label, initialContent);
+                    }}
+                    className="flex flex-col items-center justify-center transition bg-white border rounded-sm size-full hover:border-blue-500 hover:bg-blue-50 gap-y-4 "
                     style={{
                       backgroundImage: `url(${imageUrl})`,
                       backgroundSize: "cover",
@@ -248,7 +252,7 @@ const TemplateGallery = () => {
                       backgroundRepeat: "no-repeat",
                     }}
                   />
-                  <p className="truncate  text-sm font-medium">{label}</p>
+                  <p className="text-sm font-medium truncate">{label}</p>
                 </div>
               </CarouselItem>
             ))}
@@ -259,6 +263,6 @@ const TemplateGallery = () => {
       </div>
     </div>
   );
-}
+};
 
-export default TemplateGallery
+export default TemplateGallery;
