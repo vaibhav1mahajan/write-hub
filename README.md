@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📝 **WriteHub**
 
-## Getting Started
+**WriteHub** is a powerful, real-time collaborative document editor that allows teams and individuals to create, edit, and share documents effortlessly. With seamless collaboration, comments, and robust authentication, it enhances productivity and streamlines document management.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 **Features**
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+✅ **Real-time Collaboration:**  
+- Multiple users can edit the same document simultaneously.  
+- Instant updates ensure everyone stays in sync.  
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+✅ **Comments & Feedback:**  
+- Add, edit, and delete comments.  
+- Reply to comments for smooth discussions.  
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+✅ **Rich Editing Experience:**  
+- Text formatting (bold, italic, underline, etc.)  
+- Bullet points, numbered lists, and headings.  
+- Inline images and media embedding.  
 
-## Learn More
+✅ **Starter Templates:**  
+- Pre-built templates for business letters, proposals, resumes, and more.  
+- Save time with customizable document formats.  
 
-To learn more about Next.js, take a look at the following resources:
+✅ **Secure Authentication:**  
+- Protected access with authentication.  
+- Only authorized users can view or edit documents.  
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+✅ **Document Search:**  
+- Quickly search for documents by name or keywords.  
+- Efficient retrieval of stored documents.  
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🔥 **Tech Stack**
+- **Frontend:** Next.js, Tailwind CSS  
+- **Backend:** Convex functions (serverless)  
+- **Database:** Convex 
+- **Real-time:** Liveblocks  
+- **Authentication:** Clerk  
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 💡 **Getting Started**
+
